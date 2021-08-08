@@ -1,5 +1,5 @@
 {
-  "name": "goit-react-hw-06-phonebook",
+  "name": "goit-react-hw-07-phonebook",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -8,6 +8,7 @@
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
     "gh-pages": "^3.2.3",
+    "json-server": "^0.16.3",
     "login": "^0.8.0",
     "modern-normalize": "^1.1.0",
     "netlify": "^7.0.1",
