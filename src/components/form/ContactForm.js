@@ -1,16 +1,23 @@
 import React, { Component } from "react";
-import { v4 as uuidv4 } from "uuid";
+import { connect } from "react-redux";
 import Styles from "./Form.module.css";
 import PropTypes from "prop-types";
 
-import { connect } from "react-redux";
-import { addContact } from "../../redux/phonebook/phoneBook.actions";
+import {
+  getContacts,
+  addContact,
+} from "../../redux/phonebook/phoneBook.operations";
+import { getContactsSelector } from "../../redux/phonebook/phoneBook.selectors";
 
 class ContactForm extends Component {
   state = {
     name: "",
     number: "",
   };
+
+  componentDidMount() {
+    this.props.getContacts();
+  }
 
   handleChange = (event) => {
     const { name, value } = event.target;
@@ -81,9 +88,9 @@ ContactForm.prototypes = {
 };
 
 const mapStateToProps = (state) => ({
-  contacts: state.contacts.items,
+  contacts: getContactsSelector(state),
 });
 
-const mapDispatchToProps = { addContact };
+const mapDispatchToProps = { getContacts, addContact };
 
 export default connect(mapStateToProps, mapDispatchToProps)(ContactForm);

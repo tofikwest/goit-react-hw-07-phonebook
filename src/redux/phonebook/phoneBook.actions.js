@@ -1,45 +1,21 @@
-// react-redux
-
-// import { v4 as uuid } from "uuid";
-
-// const ADD_CONTACT = "phonebook/addContact";
-// const REMOVE_CONTACT = "phonebook/removeContact";
-// const FILTER_CONTACTS = "phonebook/filterContacts";
-
-// const addContact = (contact) => ({
-//   type: ADD_CONTACT,
-//   payload: {
-//     ...contact,
-//     id: uuid(),
-//   },
-// });
-
-// const removeContact = (payload) => ({
-//   type: REMOVE_CONTACT,
-//   payload: payload,
-// });
-
-// const filterContacts = (payload) => ({
-//   type: FILTER_CONTACTS,
-//   payload: payload.target.value,
-// });
-
-// export { addContact, removeContact, filterContacts };
-
-// redux-toolkit 
-
 import { createAction } from "@reduxjs/toolkit";
-import { v4 as uuid } from "uuid";
 
-const addContact = createAction("phonebook/addContact", (contact) => {
-  return {
-    payload: {
-      ...contact,
-      id: uuid(),
-    },
-  };
-});
-const removeContact = createAction("phonebook/removeContact");
-const filterContacts = createAction("phonebook/filterContacts");
+export const getContactsRequest = createAction("contacts/fetchContactsRequest");
+export const getContactsSuccess = createAction("contacts/fetchContactsSuccess");
+export const getContactsFailure = createAction("contacts/fetchContactsFailure");
 
-export { addContact, removeContact, filterContacts };
+export const addContactRequest = createAction("contacts/addContactRequest");
+export const addContactSuccess = createAction("contacts/addContactSuccess");
+export const addContactFailure = createAction("contacts/addContactFailure");
+
+export const filterContact = createAction("contacts/filterСhange");
+
+export const removeContactRequest = createAction(
+  "contacts/removeContactRequest"
+);
+export const removeContactSuccess = createAction(
+  "contacts/removeContactSuccess"
+);
+export const removeContactFailure = createAction(
+  "contacts/removeContactFailure"
+);

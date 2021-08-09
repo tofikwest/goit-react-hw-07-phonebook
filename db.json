@@ -1,3 +1,39 @@
 {
-  "contacts": []
+  "contacts": [
+    {
+      "name": "Rosie Simpson",
+      "number": "459-12-56",
+      "id": "id-1"
+    },
+    {
+      "name": "Hermione Kline",
+      "number": "443-89-12",
+      "id": "id-2"
+    },
+    {
+      "name": "Eden Clements",
+      "number": "227-91-26",
+      "id": "id-3"
+    },
+    {
+      "name": "Annie Copeland",
+      "number": "227-91-26",
+      "id": "id-4"
+    },
+    {
+      "name": "Tofik Hasanov",
+      "number": "096-153-12-11",
+      "id": "id-5"
+    },
+    {
+      "name": "ASdass",
+      "number": "123123",
+      "id": "CIhezEH"
+    },
+    {
+      "name": "Dasdasd",
+      "number": "12312312",
+      "id": "jGA-c9-"
+    }
+  ]
 }

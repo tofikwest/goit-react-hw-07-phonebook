@@ -1,9 +1,10 @@
 import React from "react";
+import { connect } from "react-redux";
 import Styles from "./Filter.module.css";
 import PropTypes from "prop-types";
 
-import { connect } from "react-redux";
-import { filterContacts } from "../../redux/phonebook/phoneBook.actions";
+import { filterSelector } from "../../redux/phonebook/phoneBook.selectors";
+import { filterContact } from "../../redux/phonebook/phoneBook.actions";
 
 const Filter = ({ filter, handleChange }) => {
   return (
@@ -26,11 +27,11 @@ Filter.propTypes = {
 };
 
 const mapStateToProps = (state) => ({
-  filter: state.contacts.filter,
+  filter: filterSelector(state),
 });
 
 const mapDispatchToProps = {
-  handleChange: (evt) => filterContacts(evt.target.value),
+  handleChange: (evt) => filterContact(evt.target.value),
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Filter);
